@@ -1,10 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, FC } from "react";
 import { View, TextInput, Button, StyleSheet, Modal } from "react-native";
 
-const GoalInput = (props) => {
+interface ITodoInput {
+  onAddGoal: (arg0: string) => void;
+  visible: boolean;
+  onCancel: (
+    ev: import("react-native").NativeSyntheticEvent<
+      import("react-native").NativeTouchEvent
+    >
+  ) => void;
+}
+
+const TodoInput: FC<ITodoInput> = (props) => {
   const [enteredGoal, setEnteredGoal] = useState("");
 
-  const goalInputHandler = (enteredText: string) => {
+  const TodoInputHandler = (enteredText: string) => {
     setEnteredGoal(enteredText);
   };
 
@@ -17,9 +27,9 @@ const GoalInput = (props) => {
     <Modal visible={props.visible} animationType="slide">
       <View style={styles.inputContainer}>
         <TextInput
-          placeholder="Course Goal"
+          placeholder="Type here"
           style={styles.input}
-          onChangeText={goalInputHandler}
+          onChangeText={TodoInputHandler}
           value={enteredGoal}
         />
         <View style={styles.buttonContainer}>
@@ -53,9 +63,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-around",
   },
-
   button: {
     width: "40%",
   },
 });
-export default GoalInput;
+export default TodoInput;
