@@ -54,12 +54,12 @@ const Details: FC<IDetailsProps> = (props) => {
 
 const styles = StyleSheet.create({
   text: { flex: 5, textAlign: "justify" },
-  geraniumImage: { width: 100, height: 130, marginRight: 10 },
+  geraniumImage: { width: "30%", height: 130, marginRight: 10 },
   lilyImage: { flex: 5, width: "10%", height: 130, marginLeft: 10 },
   poppyImage: { width: "100%", height: 165 },
   row: {
     flexDirection: "row",
-    paddingVertical: 25,
+    paddingVertical: 13,
     paddingHorizontal: 20,
     width: "100%",
   },

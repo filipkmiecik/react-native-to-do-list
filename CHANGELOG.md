@@ -42,37 +42,21 @@ All notable changes to this project will be documented in this file.
 
     - Home screen is now scrollable with ScrollView
 
-## [0.5] - 18-05-2020
+## [0.5] - 23-05-2020
 
 ### Added
 
     - Simple todo list with TextInput and FlatList
 
-## [0.6] - 20-05-2020
+## [0.6] - 24-05-2020
 
 ### Added
 
-    - New screen for todo item input
+    - New modal for todo item input
 
-### Changes
-
-    - Split task data into Title and Description
-
-## [0.7] - 22-05-2020
+## [1.0] - 25-05-2020
 
 ### Changes
 
     - Moved todo list state management to Redux
-
-## [0.7.1] - 23-05-2020
-
-### Changes
-
-    - Finished styling for TodoList
-
-## [1.0] - 24-05-2020
-
-### Changes
-
-    - Added custom fonts
-    - Improved overall styling for screens to make them more visually appealing
+    - Minor styling fixes
