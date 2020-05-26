@@ -20,7 +20,7 @@ interface ITodoListProps {}
 const TodoList: FC<ITodoListProps> = (props) => {
   const [isAddMode, setIsAddMode] = useState(false);
   const dispatch = useDispatch();
-  const todos = useSelector((state: any) => state.todos);
+  const todos = useSelector((state: any) => state.todos.todos);
 
   const addGoalHandler = (todoTitle: string) => {
     dispatch(addTodo(todoTitle));
@@ -71,3 +71,17 @@ const styles = StyleSheet.create({
 });
 
 export default TodoList;
+
+{
+  /* <FlatList
+style={styles.todoContainer}
+data={todos}
+renderItem={(itemData) => (
+  <TodoItem
+    id={itemData.item.id}
+    onDelete={removeGoalHandler}
+    title={itemData.item.value}
+  />
+)}
+/> */
+}

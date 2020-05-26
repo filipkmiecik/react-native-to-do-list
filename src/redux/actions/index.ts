@@ -5,6 +5,6 @@ export const addTodo = (todoTitle: string) => {
   return { type: ADD_TODO, title: todoTitle };
 };
 
-export const removeTodo = (todoId: number) => {
+export const removeTodo = (todoId) => {
   return { type: REMOVE_TODO, id: todoId };
 };

@@ -19,7 +19,7 @@ const todosReducer = (state = initialState, action: any) => {
       return {
         ...state,
         todos: state.todos.filter(
-          (todo: { id: number }) => todo.id !== action.goalId
+          (todo: { id: number }) => todo.id !== action.todoId
         ),
       };
     }
