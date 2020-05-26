@@ -1,28 +1,34 @@
 import React, { FC, useState } from "react";
-import { View, Text, StyleSheet, Button, FlatList } from "react-native";
+import {
+  View,
+  StyleSheet,
+  Button,
+  Text,
+  ScrollView,
+  FlatList,
+} from "react-native";
+import { useDispatch, useSelector } from "react-redux";
 
 import Header from "../../components/Header";
 import TodoItem from "./TodoItem";
 import TodoInput from "./TodoInput";
 
+import { addTodo, removeTodo } from "../../redux/actions";
+
 interface ITodoListProps {}
 
 const TodoList: FC<ITodoListProps> = (props) => {
-  const [courseGoals, setCourseGoals] = useState([]);
   const [isAddMode, setIsAddMode] = useState(false);
+  const dispatch = useDispatch();
+  const todos = useSelector((state: any) => state.todos);
 
-  const addGoalHandler = (goalTitle: string) => {
-    setCourseGoals((currentGoals) => [
-      ...currentGoals,
-      { id: Math.random().toString(), value: goalTitle },
-    ]);
+  const addGoalHandler = (todoTitle: string) => {
+    dispatch(addTodo(todoTitle));
     setIsAddMode(false);
   };
 
-  const removeGoalHandler = (goalId: number) => {
-    setCourseGoals((currentGoals) => {
-      return currentGoals.filter((goal: { id: number }) => goal.id !== goalId);
-    });
+  const removeGoalHandler = (todoId: number) => {
+    dispatch(removeTodo(todoId));
   };
 
   const cancelGoalAdditionHandler = () => {
@@ -41,7 +47,7 @@ const TodoList: FC<ITodoListProps> = (props) => {
         />
         <FlatList
           style={styles.todoContainer}
-          data={courseGoals}
+          data={todos}
           renderItem={(itemData) => (
             <TodoItem
               id={itemData.item.id}
