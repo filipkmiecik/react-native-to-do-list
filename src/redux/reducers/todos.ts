@@ -11,7 +11,7 @@ const todosReducer = (state = initialState, action: any) => {
         ...state,
         todos: [
           ...state.todos,
-          { id: Math.random().toString(), value: action.title },
+          { id: Date.now().toString(), value: action.title },
         ],
       };
     }
@@ -19,7 +19,7 @@ const todosReducer = (state = initialState, action: any) => {
       return {
         ...state,
         todos: state.todos.filter(
-          (todo: { id: number }) => todo.id !== action.todoId
+          (todo: { id: number }) => todo.id !== action.id
         ),
       };
     }

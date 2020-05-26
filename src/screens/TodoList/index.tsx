@@ -1,12 +1,5 @@
 import React, { FC, useState } from "react";
-import {
-  View,
-  StyleSheet,
-  Button,
-  Text,
-  ScrollView,
-  FlatList,
-} from "react-native";
+import { View, StyleSheet, Button, FlatList } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 
 import Header from "../../components/Header";
