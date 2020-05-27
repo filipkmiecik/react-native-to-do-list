@@ -54,7 +54,11 @@ All notable changes to this project will be documented in this file.
 
     - New modal for todo item input
 
-## [1.0] - 25-05-2020
+## [1.0] - 26-05-2020
+
+### Added
+
+    - Readme file
 
 ### Changes
 
