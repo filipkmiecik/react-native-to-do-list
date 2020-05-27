@@ -1,6 +1,5 @@
 import React, { FC } from "react";
 import { View, Text, StyleSheet } from "react-native";
-
 import Colors from "../constans/Colors";
 
 interface IHeaderProps {

@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { View, StyleSheet } from "react-native";
 
